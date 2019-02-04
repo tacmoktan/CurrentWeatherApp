@@ -60,7 +60,10 @@ const renderResponseData = (responseData) => {
 
     document.querySelector('#humidity .right').innerHTML = ` ${humidity} % `;
     document.querySelector('#pressure .right').innerHTML = ` ${pressure} mBar `;
-    document.querySelector('#visibility .right').innerHTML = ` ${visibility} km `;
-
+    if(isNaN(visibility))
+        document.querySelector('#visibility').style.display = 'none';
+    else{
+        document.querySelector('#visibility .right').innerHTML = ` ${visibility} km `;
+    }
     document.querySelector('#wind').innerHTML = ` ${wind} km/hr `;
 } 
