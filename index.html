@@ -1,61 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Current Weather</title>
 
-    <link rel="stylesheet" type="text/css" href="styles.css" >
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
+
 <body>
     <div id="container">
-        <h1 id="title">Current weather</h1>
-        <form id="form">
-            <div class="form-input">
-                <input type="text" id="cityTextBox" placeholder="Enter your city name"/>
-                <input type="submit" id="submitCity" onclick="submitCity_clicked()"/>
+        <div id="formDataWrapper">
+            <form id="form">
+                <h1 id="title">Current weather</h1>
+                <div class="form-input">
+                    <input type="text" id="cityTextBox" placeholder="Enter your city name" autofocus required/>
+                    <input type="submit" id="submitCity" onclick="submitCity_clicked()" />
+                </div>
+            </form>
+            <div id="displayFetchedData">
+
+                <section class="section" id="section-tempDescription">
+                    <div class="fetched-data" id="temperature">
+                        <span class="left"></span>
+                        <span class="right"></span>
+                    </div>
+                    <div class="fetched-data" id="weatherDescription">
+                        <span class="left"></span>
+                        <span class="right"></span>
+                    </div>
+                </section>
+
+                <section class="section" id="section-currentDetails">
+                    <h3 class="section-title">Current Details</h3>
+                    <div class="fetched-data" id="humidity">
+                        <span class="left">Humidity</span>
+                        <span class="right"></span>
+                    </div>
+                    <div class="fetched-data" id="pressure">
+                        <span class="left">Pressure</span>
+                        <span class="right"></span>
+                    </div>
+                    <div class="fetched-data" id="visibility">
+                        <span class="left">Visibility</span>
+                        <span class="right"></span>
+                    </div>
+                </section>
+
+                <section class="section" id="section-wind">
+                    <h3 class="section=title">Wind</h3>
+                    <div class="fetched-data" id="wind"></div>
+                </section>
             </div>
-        </form>
-        <div id="displayFetchedData">
+            <div id="errorMessage">
 
-            <section class="section">
-                <div class="fetched-data" id="temperature">
-                    <span class="left"></span>
-                    <span class="right"></span>
-                </div>
-                <div class="fetched-data" id="weatherDescription">
-                    <span class="left"></span>
-                    <span class="right"></span>
-                </div>
-            </section>
-
-            <section class="section body">
-                <h3 class="section-title">Current Details</h3>
-                <div class="fetched-data" id="humidity">
-                    <span class="left">Humidity</span>
-                    <span class="right"></span>
-                </div>
-                <div class="fetched-data" id="pressure">
-                    <span class="left">Pressure</span>
-                    <span class="right"></span>
-                </div>
-                <div class="fetched-data" id="visibility">
-                    <span class="left">Visibility</span>
-                    <span class="right"></span>
-                </div>
-            </section>
-            
-            <section class="section">
-                <h3 class="section=title">Wind</h3>
-                <div class="fetched-data" id="wind"></div>
-            </section>
-        </div>
-        <div id="errorMessage">
-            
+            </div>
         </div>
     </div>
     <script src="main.js">
     </script>
 </body>
+
 </html>

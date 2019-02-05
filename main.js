@@ -20,10 +20,12 @@ async function getWeatherData() {
             console.log(responseWeatherData);
             const responseWeatherDataJson =  await responseWeatherData.json();
             renderResponseData(responseWeatherDataJson);
+
+            errorMessage.style.display= "none";
         }
-        else
+        else{
             throw new Error('Request failed!');
-    
+        }
     }catch(error){
         console.log(error);
         errorMessage.innerHTML = "Make sure your city name is spelled correctly";
@@ -35,6 +37,7 @@ async function getWeatherData() {
 //event handler
 function submitCity_clicked(){
     event.preventDefault();
+    displayFetchedData.style.display="none"  //to ensure no previous data is displayed on screen.
     console.log('submit click');
     getWeatherData();
 }
@@ -42,7 +45,7 @@ function submitCity_clicked(){
 //rendering response function
 const renderResponseData = (responseData) => {
 
-    displayFetchedData.style.display="block";
+    displayFetchedData.style.display="grid";
     console.log(responseData);
     //data collection
     let temperature = responseData.main.temp - 273.15; //   kelvin to °C

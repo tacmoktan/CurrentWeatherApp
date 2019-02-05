@@ -13,18 +13,27 @@
 #title{
     /* border:1px solid black; */
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    border-radius:5px;
+    border-bottom:5px solid rgba(0, 0, 0, 0.671);
+    border-radius:15px;
     padding:5px;
     background:#fffc5034;
     text-align:center;
-    color:rgba(255, 255, 255, 0.699);
+    color:rgba(255, 255, 255, 0.94);
     height:7vh;
 }
+
 #form{
     /* border:1px solid black; */
+    display:grid;
+    justify-content: center;
+    grid-row-gap:10px;
+    height: 17vh;
     padding:5px;
+    margin-bottom: 30px;
 }
-
+::placeholder{
+    color:rgba(255, 255, 255, 0.719);
+}
 #cityTextBox{
     border:1px solid rgb(161, 161, 161);
     background:transparent;
@@ -41,8 +50,8 @@
 }
 
 #submitCity{
-    background:rgb(68, 219, 144);
-    color:black;
+    background:rgb(59, 250, 155);
+    color:rgba(0, 0, 0, 0.842);
     font-weight:bold;
     border:none;
     border-radius:5px;
@@ -50,13 +59,13 @@
     cursor:pointer;
     transition:0.5s;
     outline:none;
-
     height: 35px;
     width: 80px;
 }
 
 #submitCity:hover{
-    background:rgb(59, 250, 155);
+    background:rgb(34, 228, 131);
+    color:black;
 }
 
 
@@ -71,11 +80,30 @@
 
 #displayFetchedData{
     display:none;
+    grid-row-gap: 20px;
+    /* border: 1px solid black; */
 }
+
 .section{
-    border:1px solid black;
-    margin:10px 0;
-    padding:5px;
+    border-left: 10px solid #000000ab;
+    border-right: 10px solid #000000ab;
+    
+    box-shadow: 0px 0px 15px rgb(59, 250, 155);
+    line-height: 1.5;
+    padding:15px;
+    border-radius:5px;
+}
+#section-tempDescription,#section-currentDetails,#section-wind{
+    position:relative;
+}
+#section-tempDescription{animation:fade .5s ease-in;}
+#section-currentDetails{animation:fade 1s ease-in;}
+#section-wind{animation:fade 1.5s ease-in;}
+
+@keyframes fade{
+    0%{top:100px;}
+    100%{top:0px;}
+
 }
 #section-title{
     margin-bottom: 10px;
@@ -86,5 +114,23 @@
 }
 #errorMessage{
     display:none;
-    color:red;
+    font-weight: bold;
+    height: 3vh;
+    padding: 10px;
+    border-radius: 5px;
+    border-left: 10px solid rgba(255, 0, 0, 0.514);
+    border-right: 10px solid rgba(255, 0, 0, 0.514);
+    
+    box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.72);
+    
+    animation:upward .5s ease-in;
+    animation-fill-mode: forwards;
+    position:relative;
+    top:10px;
+}
+@keyframes upward{   /* fade-in effect */
+    0%{background: #fb737300;
+        color: rgba(255, 0, 0, 0);}
+    100%{background: #fb73733b;
+        color: rgba(255, 0, 0, 0.747);}
 }
