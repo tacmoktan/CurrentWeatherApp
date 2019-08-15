@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Current Weather</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="favicon/favicon.ico" type="image/x-icon">
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Acme|Ubuntu&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
@@ -14,7 +18,8 @@
     <div id="container">
         <div id="formDataWrapper">
             <form id="form">
-                <h1 id="title">Current weather</h1>
+                
+                <h2 id="title"> <img src="" id="logo_svg"/> Current Weather</h2>
                 <div class="form-input">
                     <input type="text" id="cityTextBox" placeholder="Enter your city name" autofocus required/>
                     <input type="submit" id="submitCity" onclick="submitCity_clicked()" />
